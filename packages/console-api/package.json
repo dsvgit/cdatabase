@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "version": "0.1.0",
+  "name": "@cdatabase/console-api",
+  "author": "Sergey Dedkov",
+  "description": "Cloud Database Service Console API",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "concurrently -n tsc,node \"yarn build --watch\" \"nodemon dist/index.js\"",
+    "start": "yarn build && node dist/index.js",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/node": "^18.7.14",
+    "axios": "^0.27.2",
+    "fastify": "^4.5.3"
+  }
+}

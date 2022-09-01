@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "version": "0.1.0",
+  "name": "@cdatabase/instance",
+  "author": "Sergey Dedkov",
+  "description": "Cloud Database Service Instance",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "docker:build": "docker build -t cdatabase/instance:1.0.0 .",
+    "docker:push": "docker push cdatabase/instance:1.0.0",
+    "docker:run": "docker run -d -p $PORT:3000 cdatabase/instance:1.0.0"
+  },
+  "dependencies": {
+    "fastify": "^4.5.3"
+  }
+}
