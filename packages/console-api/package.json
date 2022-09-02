@@ -6,14 +6,21 @@
   "description": "Cloud Database Service Console API",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "concurrently -n tsc,node \"yarn build --watch\" \"nodemon dist/index.js\"",
-    "start": "yarn build && node dist/index.js",
-    "build": "tsc"
+    "prisma:init": "prisma migrate dev --name init",
+    "prisma:migrate": "prisma migrate dev",
+    "dev": "source env.sh && concurrently -n tsc,node \"tsc --watch\" \"nodemon dist/index.js\"",
+    "start": "tsc && node dist/index.js",
+    "build": "tsc",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@fastify/cors": "^8.1.0",
+    "@fastify/swagger": "^7.5.0",
+    "@prisma/client": "^4.3.1",
     "@types/axios": "^0.14.0",
     "@types/node": "^18.7.14",
     "axios": "^0.27.2",
-    "fastify": "^4.5.3"
+    "fastify": "^4.5.3",
+    "prisma": "^4.3.1"
   }
 }
